@@ -1,0 +1,98 @@
+theme: jekyll-theme-chirpy
+lang: ko-KR
+timezone: Asia/Seoul
+
+title: 🤖 Ninja Dev
+tagline: AI Agent & GraphRAG 개발 일지
+description: GraphRAG, LLM 기반 AI Agent 프로젝트 개발 기록
+
+url: "https://Resilient923.github.io"
+baseurl: "/ninja-dev"
+github:
+  username: Resilient923
+  
+twitter:
+  username: Resilient923
+
+social:
+  name: Resilient923
+  links:
+    - https://github.com/Resilient923
+
+google_site_verification: 
+
+# 댓글 (선택)
+comments:
+  active: 
+
+# Paginate
+paginate: 10
+
+# Markdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# 플러그인
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+
+# 아카이브
+archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      pin: false
+  - scope:
+      path: _drafts
+      type: posts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+  - scope:
+      path: assets/img/favicons
+    values:
+      swcache: true
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
