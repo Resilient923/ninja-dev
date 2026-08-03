@@ -1,13 +1,11 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.9"
-gem "jekyll-theme-chirpy", "~> 6.3"
+gem "minima", "~> 2.5"
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
 
 group :jekyll_plugins do
-  gem "jekyll-paginate"
-  gem "jekyll-redirect-from"
+  gem "jekyll-feed"
   gem "jekyll-seo-tag"
-  gem "jekyll-archives"
-  gem "jekyll-sitemap"
-  gem "jekyll-compose"
 end
