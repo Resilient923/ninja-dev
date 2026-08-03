@@ -1,0 +1,17 @@
+# Ruby
+Gemfile.lock
+vendor/
+.bundle/
+
+# Jekyll
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
