@@ -1,6 +1,6 @@
 ---
 title: W3 - GraphRAG는 왜 경로를 "문장"으로 만들어야 하는가
-date: 2026-08-09
+date: 2026-08-08
 categories: [GraphRAG, 개발일지, W3]
 tags: [R2, 멀티홉, 인과추론, 그래프컨텍스트, Grounding, Citation, Neo4j]
 author_profile: true

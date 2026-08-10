@@ -1,6 +1,6 @@
 ---
 title: Neo4j에서 직접 데이터를 가져오니 발생한 문제들
-date: 2026-08-09 23:10:00 +0900
+date: 2026-08-09 22:10:00 +0900
 categories: [GraphRAG, 개발일지, W3]
 tags: [Neo4j, 테스트더블, ID파싱, 접근제어, 권한상승, ExactLookup, 리트리버]
 author: shinkyuchul
