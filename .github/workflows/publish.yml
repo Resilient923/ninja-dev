@@ -1,0 +1,56 @@
+name: Auto-publish Blog Posts
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # 매일 09:00 UTC (17:00 KST)
+  workflow_dispatch:     # 수동 실행용
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+          bundler-cache: true
+      
+      - name: Check today's post
+        id: check
+        run: |
+          DAY=$(date +%d)
+          MONTH=$(date +%m)
+          YEAR=$(date +%Y)
+          PATTERN="docs/_posts/${YEAR}-${MONTH}-${DAY}-*.md"
+          
+          if ls $PATTERN 1> /dev/null 2>&1; then
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "post=$(ls $PATTERN | head -1)" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Build Jekyll
+        if: steps.check.outputs.found == 'true'
+        run: bundle exec jekyll build
+      
+      - name: Deploy to GitHub Pages
+        if: steps.check.outputs.found == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: docs/_site
+      
+      - name: Commit and push
+        if: steps.check.outputs.found == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Publish blog: $(date +%Y-%m-%d)" || true
+          git push

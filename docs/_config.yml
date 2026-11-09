@@ -1,0 +1,24 @@
+title: GraphRAG 구현 일지
+description: 검색 > 그래프 탐색 > LLM 검증까지, 3개월 개발 여정
+baseurl: /retriever-blog
+url: https://YOUR_GITHUB_USERNAME.github.io
+permalink: /:categories/:title/
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# 블로그 설정
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:year/:month/:day/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "AI 개발자"
