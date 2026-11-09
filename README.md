@@ -1,6 +1,6 @@
-# GraphRAG 개발 일지 - GitHub Pages
+# 🤖 Ninja Dev - AI Agent & GraphRAG 개발 일지
 
-2주 블로그 시리즈: Retriever 프로젝트의 성장 스토리
+## 📚 2주 블로그 시리즈: Retriever 프로젝트의 성장 스토리
 
 ## 📋 14일 포스트 목록
 
